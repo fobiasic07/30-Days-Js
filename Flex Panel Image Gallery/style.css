@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s cubic-bezier(0, 1.61, 0.79, 1.74),
+              font-size 0.3s cubic-bezier(0, 1.61, 0.79, 1.74);
+}
+
+.main-panel {
+  display: flex;
+  height: 700px;
+}
+
+.main-panel .panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  flex-direction: column;
+  background-position: center;
+  overflow: hidden;
+  transition: 
+      flex 0.5s ease-in-out,
+      background  0.4s cubic-bezier(0, 1.61, 0.79, 1.74),
+      font-size 0.2s cubic-bezier(0, 1.61, 0.79, 1.74),
+      transform 0.3s cubic-bezier(0, 1.61, 0.79, 1.74);
+}
+
+.panel1 {
+  background-image: url('Assets/image1.jfif');
+}
+
+.panel2 {
+  background-image: url('Assets/Image2.jpg');
+}
+
+.panel3 {
+  background-image: url('Assets/image3.jfif');
+}
+
+.panel4 {
+  background-image: url('Assets/image4.jfif');
+}
+
+.panel5 {
+  background-image: url('Assets/image5.jfif');
+}
+
+p {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  color: white;
+}
+
+.panel > * {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+}
+
+.panel > *:first-child {
+  transform: translateY(-100%);
+}
+
+.panel > *:last-child {
+  transform: translateY(100%);
+}
+
+.panel.open-active > *:first-child {
+  transform: translateY(0);
+  
+}
+
+.panel.open-active > *:last-child {
+  transform: translateY(0);
+}
+
+.panel.open {
+  flex: 3;
+  font-size: 50px;
+}
+
