@@ -12,8 +12,14 @@ function setDate(){
 
   const seconds = now.getSeconds();
   const secondsDegrees = (((seconds*360) / 60) + 90);
-  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-
+  if (secondsDegrees >= 449 || secondsDegrees <= 90) {
+    secondHand.style.transition = "0.01s ease";
+    secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+  } else {
+    secondHand.style.transition = "0.05s cubic-bezier(0, 2.35, 0.72, 1.44)";
+    secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+  }
+  
   const minutes = now.getMinutes();
   const minutesDegrees = (((minutes*360) / 60) + 90);
   minuteHand.style.transform =`rotate(${minutesDegrees}deg)`;
